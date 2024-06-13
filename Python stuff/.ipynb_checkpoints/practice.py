@@ -17,3 +17,13 @@ c = a/b
 d = a%b
 print(c)
 print(d)
+
+def ticket(age, ticket_type):
+    if age < 65 and ticket_type == "10-ride":
+        return int(38)
+    if age < 65 and ticket_type == "standard":
+        return float(159.5)
+    if age >= 65 and ticket_type == "10-ride":
+        return float(34.2)
+    if age >= 65 and ticket_type == "elderly":
+        return float(143.55)
