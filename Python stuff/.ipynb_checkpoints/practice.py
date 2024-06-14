@@ -27,3 +27,53 @@ def ticket(age, ticket_type):
         return float(34.2)
     if age >= 65 and ticket_type == "elderly":
         return float(143.55)
+    
+    def convert_2_km():
+        distance = True
+        while distance:
+            user = input("Miles (or STOP):")
+            try:
+                miles = float(user)
+                if miles < 0:
+                    print("Bad input:" + str(miles))
+                if miles >= 0:
+                    miles = miles*(1.60934)
+                    print("Kilometers:" + str(miles))
+            except ValueError:
+                try:
+                    miles = str(user)
+                    if miles != 'STOP':
+                        print("Bad input:" + str(miles))
+                    if miles == 'STOP':
+                        return
+                except ValueError:
+                    return
+        
+        
+
+def meal_price(items):
+    item = []
+    price = 0
+    for item in items:
+        if item == 'apple':
+            price += 0.59
+        elif item == 'burger':
+            price += 2.50
+        elif item == 'drink':
+            price += 0.99
+        elif item == 'fries':
+            price += 1.29
+        else:
+            print('Unknown item: ' + item)
+
+    return price
+            
+    
+
+
+def print_change(row):
+    x = []
+    for i in range(1, len(row)):
+        x.append(row[i] - row[i-1])
+    print(*x, sep=",")
+    
